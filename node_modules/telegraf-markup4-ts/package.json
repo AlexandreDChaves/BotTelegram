@@ -1,0 +1,38 @@
+{
+  "name": "telegraf-markup4-ts",
+  "version": "1.0.7",
+  "description": "The Telegraf Markup from v4 for v3.39 (TypeScript)",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "keywords": [
+    "telegraf",
+    "typescript",
+    "telegram",
+    "bot"
+  ],
+  "scripts": {
+    "dev": "nodemon src/test.ts",
+    "test": "npm run build && node dist/test.js",
+    "build": "tsc -p ."
+  },
+  "author": "Degreet <degreetpro@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.6",
+    "dotenv": "^10.0.0",
+    "telegraf": "3.39",
+    "telegraf-markup4-ts": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.39",
+    "@types/node": "^16.7.1",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Degreet/telegraf-markup4-ts"
+  },
+  "homepage": "https://github.com/Degreet/telegraf-markup4-ts#readme"
+}
