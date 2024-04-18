@@ -1,9 +1,11 @@
-const env = require('./.env')
-const { Telegraf } = require('telegraf')
+require('dotenv').config({ path: '/home/alexandre/Dev/node/xande_bot/.env' });
+const apiUrl = `https://api.telegram.org/bot/process.env.token`;
+const apiFileUrl = `https://api.telegram.org/file/bot/process.env.token`;
+const { Telegraf } = require('telegraf');
 const axios = require('axios')
 const moment = require('moment')
 const Markup = require('telegraf/markup')
-const bot = new Telegraf(env.token)
+const bot = new Telegraf(process.env.token);
 
 const tecladoOpcao = Markup.keyboard([ 
     ['⚙️Backend', '💻FrontEnd', '🥸Cybersecurity'],
@@ -42,18 +44,9 @@ bot.hears('DevOps', ctx => ctx.reply('https://bit.ly/49A7pN6'))
 
 bot.on('text', (ctx) => {
     const text = ctx.message.text.toLowerCase();
-    if (text === 'vagas') {
+    if ((text === 'vagas') || (text === 'cursos')){
         ctx.reply('Legal!', tecladoVagas);
-    }
+    } 
 });
-
-bot.on('text', (ctx) => {
-    const text = ctx.message.text.toLowerCase();
-    if (text === 'cursos') {
-        ctx.reply('Legal!', tecladoOpcao);
-    }
-});
-
-  
-
+ 
 bot.startPolling()
